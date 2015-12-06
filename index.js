@@ -2,14 +2,14 @@
 //require express, http server, and socket.io
 var express = require('express');
 var http = require('http');
-
+var socket = require('socket.io');
 
 //create variable called "app", that relies on express
 var app = express();
 //create a variable called "server" on the app to create and run the http server
 var http = http.Server(app);
 //create a variable called "io" that runs socket.io on the http server
-var io = require('socket.io')(http);
+var io = socket(http);
 
 //get the directory from "app" and send it the file '/index.html' 
 //index.html is an html file that we have created for you to make the chat button and input on the page
