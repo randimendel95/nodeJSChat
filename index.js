@@ -1,30 +1,23 @@
-
-//require express, http server, and socket.io
-var express = require('express');
-var http = require('http');
+//require express, http server, and socket.io using the variables 'express', 'http', and 'socket'
 
 
-//create variable called "app", that relies on express
-var app = express();
-//create a variable called "server" on the app to create and run the http server
-var http = http.Server(app);
+//create variable called "app", which is an express application
+
+
+//create a variable called "http" that uses the express "app" as its server
+
+
 //create a variable called "io" that runs socket.io on the http server
-var io = require('socket.io')(http);
 
-//get the directory from "app" and send it the file '/index.html' 
-//index.html is an html file that we have created for you to make the chat button and input on the page
 
-app.get('/', function(req, res){
-  res.sendFile(__dirname + '/index.html');
-});
+//Get the "app" and send it the file '/index.html' which is provided in the repo
+//hint: use the function .sendFile(__dirname + {file location & name})
+
 
 //on the "io" variable, when there is a connection, execute a function that emits the chat message when one is sent
-io.on('connection', function(socket){
-        socket.on('chat message', function(msg){
-                io.emit('chat message', msg);
-        });
-});
+//use the .on() method to execute a function on the "io" variable when there is a connection and on the "socket" variable when there is a chat message
+//then on the "io" use the .emit function to emit msg when there is a chat message.
 
-http.listen(3000, function(){
-        console.log('listening on *:3000');
-});
+
+//listen at the http server, using port 3000 
+//Choose a number, then add a console.log() statement to tell you where the server is listening to your requests
