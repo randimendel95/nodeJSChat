@@ -5,21 +5,30 @@
     <title>Socket.IO chat</title>
     <style>
       * { margin: 0; padding: 0; box-sizing: border-box; }
-      body { font: 13px Helvetica, Arial; }
-      form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
-      form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
-      form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
-      #messages { list-style-type: none; margin: 0; padding: 0; }
-      #messages li { padding: 5px 10px; }
-      #messages li:nth-child(odd) { background: #eee; }
+      body { font: 17px Helvetica, Arial, sans-serif; background-color: #222;}
+      form { background: #000; padding: 5px; position: fixed; bottom: 0; width: 70%; padding-bottom: 10px; padding-top: 10px;}
+      form input { border: 0; padding: 10px; width: 90%;}
+      form button { width: 10%; background: #80bd01; border: none; padding: 10px; }
+      #messages { list-style-type: none; margin: 0; padding: 0; margin-bottom: 75px;}
+      #messages li { padding: 5px 10px; margin-bottom: 3px; background-color: white;}
+      #messages li:nth-child(odd) { background: black; color: #80bd01;}
+      #content{width:70%; margin-left: auto; margin-right: auto;}
+      #head{padding: 10px; width:70%; margin-left: auto; margin-right: auto; text-align: center; color: black; background-color: #80bd01; margin-top: 10px; margin-bottom: 15px;}
     </style>
   </head>
   <body>
-    <h1>Info 343A Chatroom!</h1>
-    <ul id="messages"></ul>
+  
+  <div id="head">
+    <h1>Info 343A Chatroom!</h1></div>
+    <div id="content">
+    <ul id="messages">
+      <li>Welcome to our chat! Post some cool stuffz!!</li>
+    </ul>
+
     <form action="">
       <input id="m" autocomplete="off" /><button>Send</button>
     </form>
+    </div>
     <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
     <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
     <script>
