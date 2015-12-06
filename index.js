@@ -14,11 +14,8 @@ var io = require('socket.io')(http);
 //get the directory from "app" and send it the file '/index.html' 
 //index.html is an html file that we have created for you to make the chat button and input on the page
 
-app.get('/static', function(req, res){
-    app.use(express.static(__dirname + '/static'));
- //   res.sendFile(__dirname + 'static/index.html');
-    //app.use(express.static('static'));
-
+app.get('/', function(req, res){
+  res.sendFile(__dirname + '/index.html');
 });
 
 //on the "io" variable, when there is a connection, execute a function that emits the chat message when one is sent
